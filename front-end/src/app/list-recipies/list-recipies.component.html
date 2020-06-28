@@ -1,0 +1,46 @@
+<div class="mat-accordion-wrapper">
+  <mat-accordion>
+    <mat-expansion-panel *ngFor="let recipe of recipies; let index=i">
+        <mat-expansion-panel-header>
+            {{recipe.title}}
+        </mat-expansion-panel-header>
+        <mat-list>
+          <div class="image">
+            <img [src]="recipe.imagePath">
+          </div>
+          <div class="details-button">
+            <button  mat-button (click)="toggleDetails()" color="accent">{{detailsButtonName}}</button>
+          </div>
+          <div class="details-wrapper" *ngIf="showDetails">
+            <div mat-subheader>Type</div>
+            <div class="chips-wrapper">
+              <mat-chip-list>
+                <mat-chip *ngFor="let type of recipe.type">{{type}}</mat-chip>
+              </mat-chip-list> 
+            </div>
+            <mat-divider></mat-divider>
+            <div mat-subheader>Ingredients</div>
+            <div class="chips-wrapper">
+              <mat-chip-list>
+                <mat-chip *ngFor="let ingredient of recipe.ingredients">{{ingredient}}</mat-chip>
+              </mat-chip-list> 
+            </div>
+
+            <mat-divider></mat-divider>
+            <div mat-subheader>Instructions</div>
+            <mat-list-item>
+              <div>{{recipe.instructions}}</div>
+            </mat-list-item>
+
+          </div>
+
+            
+        </mat-list>
+        <!-- <mat-action-row>
+          <a mat-button color="primary" [routerLink]="['/edit', recipe._id]">EDIT</a>
+          <button mat-button color="warn" (click)="deleteRecipe(recipe._id)">DELETE</button>
+        </mat-action-row> -->
+    </mat-expansion-panel>
+</mat-accordion>
+
+</div>

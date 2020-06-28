@@ -1,0 +1,25 @@
+<mat-card>
+    <form [formGroup]="form" autocomplete="off" (ngSubmit)="onChooseRecipe()">
+        <div>
+            <div class="label-container">
+                <label id="example-radio-group-label">Recipe Type</label>
+            </div>
+            <div class="radio-button-container">
+                <mat-radio-group [formControlName]="'type'" aria-label="Select an option">
+                    <mat-radio-button *ngFor="let type of types" [value]="type">{{type}}</mat-radio-button>
+                </mat-radio-group>
+            </div>
+  
+            <div class="input-ingredient-container">
+                <label id="chip-label">Ingredients:</label>
+                <app-chip-input [removable]="true" [visible]="true" [selectable]="true"></app-chip-input>
+            </div>
+    
+        </div>
+        
+        <div id="find-recipe-button">
+            <button  mat-raised-button color="accent" [disabled]="form.invalid || ingredients.length == 0">Find Recipe!</button>
+        </div>
+    </form>
+</mat-card>
+<app-list-recipies *ngIf="recipies.length > 0" [filterRecipes]="recipies"></app-list-recipies>

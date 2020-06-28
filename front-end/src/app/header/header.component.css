@@ -1,0 +1,23 @@
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.header-tab {
+    padding: 0 14px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.active-router{
+    color: #ffb74d;
+}
+
+::ng-deep .tooltip-class {
+    /* your own custom styles here */ 
+    /* e.g. */
+    background-color: #ffb74d;
+}

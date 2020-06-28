@@ -1,0 +1,22 @@
+<mat-form-field class="example-chip-list" appearance="outline">
+    <mat-chip-list #chipList aria-label="Ingredient selection">
+      <mat-chip
+        *ngFor="let element of elements"
+        [selectable]="selectable"
+        [removable]="removable"
+        (removed)="removeElement(element)">
+        {{element}}
+        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+      </mat-chip>
+      <input
+        type="text"
+        placeholder="Add ingredient..."
+        #ingredientInput
+        [matChipInputFor]="chipList"
+        [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+        (matChipInputTokenEnd)="addElement($event)"
+        matTooltip="Press Enter after each ingredient"
+        matTooltipClass="tooltip-class">
+    </mat-chip-list>
+    <!-- <mat-hint align="start"><strong>Press Enter after each ingredient</strong></mat-hint> -->
+  </mat-form-field>

@@ -1,0 +1,15 @@
+mat-form-field {
+    width: 100%;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+}
+
+::ng-deep .tooltip-class {
+    /* your own custom styles here */ 
+    /* e.g. */
+    background-color: #ffb74d;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline-thick {
+    color: #ff5722;
+}

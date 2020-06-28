@@ -1,0 +1,35 @@
+mat-form-field {
+    width: 100%;
+    /* padding-top: 10px;
+    padding-bottom: 10px; */
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+
+mat-card {
+  width: 50%;
+  margin: 1rem auto;
+}
+
+.label-container {
+  margin: 0px 0px 15px 0px;
+
+}
+.radio-button-container {
+  margin: 0px 0px 15px 0px;
+
+}
+
+.input-ingredient-container {
+
+}
+#example-radio-group-label {
+  font-weight: bold;
+}
+
+#find-recipe-button {
+  text-align: center;
+}

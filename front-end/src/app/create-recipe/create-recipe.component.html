@@ -1,0 +1,33 @@
+<mat-card>
+    <form [formGroup]="form" autocomplete="off" (ngSubmit)="onSaveRecipe()">
+        <mat-form-field appearance="outline">
+            <mat-label>Recipe Title</mat-label>
+            <input matInput type="text" [formControlName]="'title'">
+        </mat-form-field>
+        <div class="pick-image-wrapper">
+            <button mat-stroked-button type="button" (click)="imageBrowser.click()">Upload Image</button>
+            <input type="file" #imageBrowser (change)="imageSelected($event)">
+        </div>
+
+        <div class="image-preview" *ngIf="imagePreview && imagePreview !== ''">
+            <img [src]="imagePreview" [alt]="form.value.title">
+
+        </div>
+
+        <div formArrayName="type">
+            <div class="checkbox-group" *ngFor="let t of types; let i=index">
+              <mat-checkbox [formControlName]="i" [value]="t">{{t}}</mat-checkbox>
+            </div>
+        </div>
+
+        <app-chip-input [removable]="true" [visible]="true" [selectable]="true"></app-chip-input>
+
+
+        <mat-form-field appearance="outline">
+            <mat-label>Cooking Instructions</mat-label>
+            <textarea matInput rows="3" [formControlName]="'instructions'"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="accent" [disabled]="form.invalid || !isCheckBoxesValid()">Add Recipe!</button>
+
+    </form>
+</mat-card>

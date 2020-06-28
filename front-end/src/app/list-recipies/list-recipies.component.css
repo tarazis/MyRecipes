@@ -1,0 +1,47 @@
+mat-expansion-panel {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    /* padding: 1rem; */
+}
+mat-expansion-panel-header {
+    font-size: 18px;
+}
+
+mat-accordion {
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    padding: 16px;
+}
+
+.mat-list-item {
+    height: auto;
+}
+
+.chips-wrapper {
+    padding: 1rem;
+    /* margin-top: 16px;
+    padding-bottom: 1rem; */
+
+}
+
+.image {
+    width: 100%;
+    /* max-width: 400px; */
+}
+
+.image img {
+    width: 100%;
+    /* height: 20rem; */
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.mat-accordion-wrapper {
+    margin: 1rem auto;
+    width: 50%;
+}
+
+.details-button {
+    text-align: center;
+    margin: 15px 15px 0px 15px;
+}
